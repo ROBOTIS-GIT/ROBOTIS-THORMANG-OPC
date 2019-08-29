@@ -497,27 +497,28 @@ void MainWindow::updateIMU(double roll, double pitch)
 
 void MainWindow::makeUI()
 {
-  makeTabUI(ui_.right_arm_group, ui_.right_arm_torque, right_arm_button_group_, qnode_.right_arm_offset_group_);
-  makeTabUI(ui_.left_arm_group, ui_.left_arm_torque, left_arm_button_group_, qnode_.left_arm_offset_group_);
-  makeTabUI(ui_.leg_group, ui_.leg_torque, legs_button_group_, qnode_.legs_offset_group_);
-  makeTabUI(ui_.body_group, ui_.body_torque, body_button_group_, qnode_.body_offset_group_);
+  makeTabUI(ui_.right_arm_group, qnode_.right_arm_offset_group_);
+  makeTabUI(ui_.left_arm_group, qnode_.left_arm_offset_group_);
+  makeTabUI(ui_.leg_group, qnode_.legs_offset_group_);
+  makeTabUI(ui_.body_group, qnode_.body_offset_group_);
 }
 
-void MainWindow::makeTabUI(QGroupBox *joint_widget, QGroupBox *torque_widget, QButtonGroup *button_group,
-                           std::map<int, std::string> &offset_group)
+//void MainWindow::makeTabUI(QGroupBox *joint_widget, QGroupBox *torque_widget, QButtonGroup *button_group,
+//                           std::map<int, std::string> &offset_group)
+void MainWindow::makeTabUI(QGroupBox *joint_widget, std::map<int, std::string> &offset_group)
 {
-  QSignalMapper *torque_checkbox_signalMapper = new QSignalMapper(this);
+  //  QSignalMapper *torque_checkbox_signalMapper = new QSignalMapper(this);
 
   QGridLayout *grid_layout = (QGridLayout *) joint_widget->layout();
-  QGridLayout *torque_layout = (QGridLayout *) torque_widget->layout();
+  //  QGridLayout *torque_layout = (QGridLayout *) torque_widget->layout();
 
-  button_group = new QButtonGroup();
-  button_group->setExclusive(false);
+  //  button_group = new QButtonGroup();
+  //  button_group->setExclusive(false);
 
   int num_row = 3;
-  int torque_checkbox_index = 0;
-  int torque_row = 1;
-  int torque_col = 0;
+  //  int torque_checkbox_index = 0;
+  //  int torque_row = 1;
+  //  int torque_col = 0;
   for (std::map<int, std::string>::iterator map_it = offset_group.begin(); map_it != offset_group.end(); ++map_it)
   {
     QSignalMapper *spinbox_offset_signalMapper = new QSignalMapper(this);
@@ -607,37 +608,37 @@ void MainWindow::makeTabUI(QGroupBox *joint_widget, QGroupBox *torque_widget, QB
     num_row += 1;
 
     // torque checkbox
-    torque_row = torque_checkbox_index / 6;
-    torque_col = torque_checkbox_index % 6;
+    //    torque_row = torque_checkbox_index / 6;
+    //    torque_col = torque_checkbox_index % 6;
 
-    QCheckBox *torque_check_box = new QCheckBox(q_joint_name);
-    torque_check_box->setChecked(true);
-    torque_layout->addWidget(torque_check_box, torque_row, torque_col, 1, spinbox_size);
-    button_group->addButton(torque_check_box);
+    //    QCheckBox *torque_check_box = new QCheckBox(q_joint_name);
+    //    torque_check_box->setChecked(true);
+    //    torque_layout->addWidget(torque_check_box, torque_row, torque_col, 1, spinbox_size);
+    //    button_group->addButton(torque_check_box);
 
-    torque_checkbox_signalMapper->setMapping(torque_check_box, torque_check_box);
-    QObject::connect(torque_check_box, SIGNAL(clicked()), torque_checkbox_signalMapper, SLOT(map()));
+    //    torque_checkbox_signalMapper->setMapping(torque_check_box, torque_check_box);
+    //    QObject::connect(torque_check_box, SIGNAL(clicked()), torque_checkbox_signalMapper, SLOT(map()));
 
-    torque_checkbox_index += 1;
+    //    torque_checkbox_index += 1;
   }
 
   // all torque on
-  QSignalMapper *torque_on_signalMapper = new QSignalMapper(this);
-  QPushButton *torque_on_button = new QPushButton(tr("All torque ON"));
-  torque_layout->addWidget(torque_on_button, torque_row + 1, 4, 1, 1);
-  torque_on_signalMapper->setMapping(torque_on_button, button_group);
-  QObject::connect(torque_on_button, SIGNAL(clicked()), torque_on_signalMapper, SLOT(map()));
-  QObject::connect(torque_on_signalMapper, SIGNAL(mapped(QObject*)), this, SLOT(clickedAllTorqueOnButton(QObject*)));
+  //  QSignalMapper *torque_on_signalMapper = new QSignalMapper(this);
+  //  QPushButton *torque_on_button = new QPushButton(tr("All torque ON"));
+  //  torque_layout->addWidget(torque_on_button, torque_row + 1, 4, 1, 1);
+  //  torque_on_signalMapper->setMapping(torque_on_button, button_group);
+  //  QObject::connect(torque_on_button, SIGNAL(clicked()), torque_on_signalMapper, SLOT(map()));
+  //  QObject::connect(torque_on_signalMapper, SIGNAL(mapped(QObject*)), this, SLOT(clickedAllTorqueOnButton(QObject*)));
 
   // all torque off
-  QSignalMapper *torque_off_signalMapper = new QSignalMapper(this);
-  QPushButton *torque_off_button = new QPushButton(tr("All torque OFF"));
-  torque_layout->addWidget(torque_off_button, torque_row + 1, 5, 1, 1);
-  torque_off_signalMapper->setMapping(torque_off_button, button_group);
-  QObject::connect(torque_off_button, SIGNAL(clicked()), torque_off_signalMapper, SLOT(map()));
-  QObject::connect(torque_off_signalMapper, SIGNAL(mapped(QObject*)), this, SLOT(clickedAllTorqueOffButton(QObject*)));
+  //  QSignalMapper *torque_off_signalMapper = new QSignalMapper(this);
+  //  QPushButton *torque_off_button = new QPushButton(tr("All torque OFF"));
+  //  torque_layout->addWidget(torque_off_button, torque_row + 1, 5, 1, 1);
+  //  torque_off_signalMapper->setMapping(torque_off_button, button_group);
+  //  QObject::connect(torque_off_button, SIGNAL(clicked()), torque_off_signalMapper, SLOT(map()));
+  //  QObject::connect(torque_off_signalMapper, SIGNAL(mapped(QObject*)), this, SLOT(clickedAllTorqueOffButton(QObject*)));
 
-  QObject::connect(torque_checkbox_signalMapper, SIGNAL(mapped(QWidget*)), this, SLOT(clickedTorqueCheckbox(QWidget*)));
+  //  QObject::connect(torque_checkbox_signalMapper, SIGNAL(mapped(QWidget*)), this, SLOT(clickedTorqueCheckbox(QWidget*)));
 }
 
 /*****************************************************************************

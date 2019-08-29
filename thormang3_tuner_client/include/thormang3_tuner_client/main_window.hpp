@@ -90,8 +90,7 @@ Q_OBJECT
  private:
   const int NONE_GAIN = 65535;
   void makeUI();
-  void makeTabUI(QGroupBox *joint_widget, QGroupBox *torque_widget, QButtonGroup *button_group,
-                 std::map<int, std::string> &offset_group);
+  void makeTabUI(QGroupBox *joint_widget, std::map<int, std::string> &offset_group);
   void publishTorqueMsgs(std::string &joint_name, bool torque_on);
 
   Ui::MainWindowDesign ui_;
@@ -100,10 +99,10 @@ Q_OBJECT
   bool all_torque_on_;
   bool is_updating_;
 
-  QButtonGroup *right_arm_button_group_;
-  QButtonGroup *left_arm_button_group_;
-  QButtonGroup *legs_button_group_;
-  QButtonGroup *body_button_group_;
+//  QButtonGroup *right_arm_button_group_;
+//  QButtonGroup *left_arm_button_group_;
+//  QButtonGroup *legs_button_group_;
+//  QButtonGroup *body_button_group_;
   std::vector<std::string> spinBox_list_;
 
   std::map<std::string, QList<QAbstractSpinBox *> > joint_spinbox_map_;
