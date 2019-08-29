@@ -20,7 +20,7 @@
    <string>ROBOTIS Tuner Client</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/images.qrc">
+   <iconset>
     <normaloff>:/images/robotis_icon.png</normaloff>:/images/robotis_icon.png</iconset>
   </property>
   <property name="locale">
@@ -482,26 +482,6 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="right_arm_torque">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>2100</width>
-                    <height>200</height>
-                   </size>
-                  </property>
-                  <property name="title">
-                   <string>Torque On/Off</string>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_2"/>
-                 </widget>
-                </item>
-                <item>
                  <spacer name="verticalSpacer">
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
@@ -684,20 +664,6 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="left_arm_torque">
-                  <property name="maximumSize">
-                   <size>
-                    <width>2000</width>
-                    <height>150</height>
-                   </size>
-                  </property>
-                  <property name="title">
-                   <string>Torque On/Off</string>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_5"/>
-                 </widget>
-                </item>
-                <item>
                  <spacer name="verticalSpacer_2">
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
@@ -865,14 +831,6 @@
                     </widget>
                    </item>
                   </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QGroupBox" name="leg_torque">
-                  <property name="title">
-                   <string>Torque On/Off</string>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_8"/>
                  </widget>
                 </item>
                 <item>
@@ -1046,36 +1004,6 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="body_torque">
-                  <property name="title">
-                   <string>Torque On/Off</string>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_11">
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="empty_1">
-                     <property name="text">
-                      <string/>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="2">
-                    <widget class="QLabel" name="empty_3">
-                     <property name="text">
-                      <string/>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="1">
-                    <widget class="QLabel" name="empty_2">
-                     <property name="text">
-                      <string/>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
                  <spacer name="verticalSpacer_4">
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
@@ -1212,9 +1140,7 @@
    </property>
   </action>
  </widget>
- <resources>
-  <include location="../resources/images.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>action_Quit</sender>
