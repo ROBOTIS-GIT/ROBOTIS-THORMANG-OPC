@@ -14,7 +14,7 @@
    <string>Thormang3 Demo GUI</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/images.qrc">
+   <iconset resource="../../../RH-P12-RN/rh_p12_rn_gui/resources/images.qrc">
     <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
   </property>
   <property name="locale">
@@ -848,6 +848,9 @@ color: rgb(46, 52, 54);
                    <property name="minimum">
                     <number>2</number>
                    </property>
+                   <property name="value">
+                    <number>4</number>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
@@ -954,7 +957,7 @@ color: rgb(46, 52, 54);
                     <double>0.010000000000000</double>
                    </property>
                    <property name="value">
-                    <double>1.000000000000000</double>
+                    <double>0.800000000000000</double>
                    </property>
                   </widget>
                  </item>
@@ -1722,8 +1725,8 @@ color: rgb(46, 52, 54);
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>796</width>
-                <height>300</height>
+                <width>66</width>
+                <height>16</height>
                </rect>
               </property>
              </widget>
@@ -2145,8 +2148,8 @@ color: rgb(46, 52, 54);
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>772</width>
-                   <height>70</height>
+                   <width>42</width>
+                   <height>16</height>
                   </rect>
                  </property>
                 </widget>
@@ -2228,7 +2231,7 @@ color: rgb(46, 52, 54);
   </action>
  </widget>
  <resources>
-  <include location="../resources/images.qrc"/>
+  <include location="../../../RH-P12-RN/rh_p12_rn_gui/resources/images.qrc"/>
  </resources>
  <connections>
   <connection>
